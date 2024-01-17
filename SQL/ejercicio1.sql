@@ -16,3 +16,11 @@ WHERE id=1
 /* 4. Eliminar el cliente con id=1 de la tabla "Clientes".*/
 DELETE FROM public.clientes
 WHERE id=1
+/*5. Crear una tabla llamada "Pedidos" con las columnas: id (entero, clave primaria), cliente_id (entero, clave externa referenciando a la tabla "Clientes"), producto(texto) y cantidad (entero).*/
+CREATE TABLE IF NOT EXISTS pedidos(
+	id SERIAL PRIMARY KEY,
+	producto VARCHAR(255),
+	cantidad INT NOT NULL, 
+	clientes_id INT NOT NULL,
+	CONSTRAINT FK_clientes_id FOREIGN KEY (clientes_id) REFERENCES clientes(id)
+)
