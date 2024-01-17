@@ -5,7 +5,6 @@ id SERIAL PRIMARY KEY,
 name VARCHAR (255) NOT NULL ,
 email VARCHAR (255) NOT NULL
 )
-
 /* 2 Insertar un nuevo cliente en la tabla "Clientes" con id=1, nombre="Juan" y email="juan@example.com". */
 INSERT INTO public.clientes(name,email)
 VALUES('Juan','juan@example.com')
@@ -23,4 +22,20 @@ CREATE TABLE IF NOT EXISTS pedidos(
 	cantidad INT NOT NULL, 
 	clientes_id INT NOT NULL,
 	CONSTRAINT FK_clientes_id FOREIGN KEY (clientes_id) REFERENCES clientes(id)
+)
+/* 6. Insertar un nuevo pedido en la tabla "Pedidos" con id=1, cliente_id=1,producto="Camiseta" y cantidad=2 */
+INSERT INTO public.pedidos (producto,cantidad,clientes_id)
+VALUES ('camiseta',2,1)
+/* 7.Actualizar la cantidad del pedido con id=1 a 3. */
+UPDATE public.pedidos
+SET cantidad = 3
+WHERE clientes_id = 1
+/* 8.Eliminar el pedido con id=1 de la tabla "Pedidos".*/
+DELETE FROM public.peddidos
+WHERE id=1
+/* 9. Crear una tabla llamada "Productos" con las columnas: id (entero, clave primaria), nombre (texto) y precio (decimal).*/
+CREATE TABLE IF NOT EXISTS productos (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR (255) NOT NULL,
+	precio DECIMAL
 )
