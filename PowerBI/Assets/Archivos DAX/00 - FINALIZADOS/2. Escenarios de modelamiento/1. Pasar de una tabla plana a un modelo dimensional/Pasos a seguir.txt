@@ -1,0 +1,17 @@
+Pasos para transformar tabla plana en modelo dimensional:
+
+1- Identificar las dimensiones o atributos.
+
+2- Crear tantos duplicados de la consulta como dimensiones hayamos contado.
+
+3- Eliminar las columnas innecesarias en las tablas de dimensiones.
+
+4- Quitar filas duplicadas en las tablas de dimensiones.
+
+5- Añadir columna de índice en las tablas de dimensiones y renombrarla de forma adecuada.
+
+6- Realizar una combinación entre la tabla de hechos y todas las tablas de dimensiones para añadir el Id.
+
+7- Eliminar columnas dimensionales de la tabla de hechos.
+
+8- Cargar datos al modelo y comprobar las relaciones entre tablas.
